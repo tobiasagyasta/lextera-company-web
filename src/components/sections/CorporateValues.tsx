@@ -5,32 +5,35 @@ const valuesData = [
   {
     icon: <MedalIcon size={40} className="text-primary" />,
     title: "Reliability & Operational Excellence",
-    description: "Delivering dependable, high-performing solutions for maximum uptime.",
+    description:
+      "Delivering dependable, high-performing solutions for maximum uptime.",
   },
   {
     icon: <TargetIcon size={40} className="text-primary" />,
     title: "Solution-Driven Innovation",
-    description: "Implementing innovative solutions to address complex challenges and drive progress.",
+    description:
+      "Implementing innovative solutions to address complex challenges and drive progress.",
   },
   {
     icon: <HandshakeIcon size={40} className="text-primary" />,
     title: "Strategic Partnership",
-    description: "Fostering collaborative relationships as trusted, long-term advisors.",
+    description:
+      "Fostering collaborative relationships as trusted, long-term advisors.",
   },
   {
     icon: <GlobeIcon size={40} className="text-primary" />,
     title: "Local Acumen, Global Vision",
-    description: "Combining local market understanding with a global perspective for world-class solutions.",
+    description:
+      "Combining local market understanding with a global perspective for world-class solutions.",
   },
 ];
 
 const CorporateValues = () => {
   return (
-    <section id="values" className="container py-24 sm:py-32">
+    <section id="values" className="container py-24 px-5 sm:py-32">
       <h2 className="text-3xl md:text-4xl font-bold text-center">
-        Our Core{" "}
-        <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-          Values
+        <span className="bg-gradient-to-r from-[#1845cb]  to-[#e4e3e4] text-transparent bg-clip-text">
+          Our Core Values
         </span>
       </h2>
       <p className="mt-4 mb-8 text-xl text-muted-foreground text-center">

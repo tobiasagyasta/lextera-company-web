@@ -1,31 +1,39 @@
-import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 
 const historyData = [
   {
     year: "2004",
-    description: "Founded as LEXCORP, with an initial focus on RF and telecommunications infrastructure development.",
+    description:
+      "Founded as LEXCORP, with an initial focus on RF and telecommunications infrastructure development.",
   },
   {
     year: "2010-2015",
-    description: "Executed nationwide projects, collaborating with key industry players such as Telkomsel, XL Axiata, Indosat, Huawei, and ZTE.",
+    description:
+      "Executed nationwide projects, collaborating with key industry players such as Telkomsel, XL Axiata, Indosat, Huawei, and ZTE.",
   },
   {
     year: "2016-2020",
-    description: "Spearheaded large-scale fiber optic rollouts and modernization swaps, enhancing Indonesia's digital backbone.",
+    description:
+      "Spearheaded large-scale fiber optic rollouts and modernization swaps, enhancing Indonesia's digital backbone.",
   },
   {
     year: "2025",
-    description: "Strategic transition into IT, rebranding as LIT to signify our expanded focus on innovative technology solutions.",
+    description:
+      "Strategic transition into IT, rebranding as LIT to signify our expanded focus on innovative technology solutions.",
   },
 ];
 
 const History = () => {
   return (
-    <section id="history" className="container py-24 sm:py-32">
+    <section id="history" className="container py-24 px-5 sm:py-32">
       <h2 className="text-3xl md:text-4xl font-bold text-center">
-        Our{" "}
-        <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-          History
+        <span className="bg-gradient-to-r from-[#1845cb]  to-[#e4e3e4] text-transparent bg-clip-text">
+          Our History
         </span>
       </h2>
       <p className="mt-4 mb-8 text-xl text-muted-foreground text-center">

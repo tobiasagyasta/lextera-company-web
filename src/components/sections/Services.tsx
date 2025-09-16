@@ -14,11 +14,10 @@ const modernSolutions = [
 
 const Services = () => {
   return (
-    <section id="services" className="container py-24 sm:py-32">
+    <section id="services" className="container py-24 px-5 sm:py-32">
       <h2 className="text-3xl md:text-4xl font-bold text-center">
-        Our Services{" "}
-        <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-          Portfolio
+        <span className="bg-gradient-to-r from-[#1845cb]  to-[#e4e3e4] text-transparent bg-clip-text">
+          Our Services Portfolio
         </span>
       </h2>
       <p className="mt-4 mb-8 text-xl text-muted-foreground text-center">
