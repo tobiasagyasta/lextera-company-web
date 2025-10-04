@@ -119,7 +119,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    background-image: url('/hexagon.svg');
+    background-image: url("/hexagon.svg");
     background-size: 70px 80px;
   }
 }

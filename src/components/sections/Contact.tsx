@@ -1,60 +1,117 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+// components/ContactUs.jsx
+"use client";
+import React from "react";
+import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
+import { Locate, Phone } from "lucide-react";
+import Link from "next/link";
 
-const Contact = () => {
+const containerStyle = {
+  width: "100%",
+  height: "400px",
+};
+
+const center = {
+  lat: -6.254969242039712, // Example: Osaka, Japan coordinates
+  lng: 106.81231768137391,
+};
+
+const ContactUs = () => {
+  const { isLoaded } = useJsApiLoader({
+    id: "google-map-script",
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "",
+  });
+
+  const mapRef = React.useRef<google.maps.Map | null>(null);
+
+  // Correctly typed onLoad callback
+  const onLoad = React.useCallback(function callback(map: google.maps.Map) {
+    mapRef.current = map;
+  }, []);
+
+  // Correctly typed onUnmount callback
+  const onUnmount = React.useCallback(function callback(map: google.maps.Map) {
+    mapRef.current = null;
+  }, []);
+
   return (
-    <section id="contact" className="container py-24 sm:py-32">
-      <h2 className="text-3xl md:text-4xl font-bold text-center">
-        <span className="bg-gradient-to-r from-[#1845cb]  to-[#e4e3e4] text-transparent bg-clip-text">
-          Contact Us
-        </span>
-      </h2>
-      <p className="mt-4 mb-8 text-xl text-muted-foreground text-center">
-        We'd love to hear from you.
-      </p>
-      <Card className="mx-auto max-w-2xl">
-        <CardHeader>
-          <CardTitle>Get in Touch</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div>
-            <h4 className="font-semibold">Head Office:</h4>
-            <p className="text-muted-foreground">
-              [Placeholder: Jakarta, Indonesia]
+    <section className="bg-gray-100 bg-opacity-10 p-8 md:p-16 rounded-xl m-4 md:m-8">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#061d61] mb-2">
+            Contact Us
+          </h2>
+        </div>
+
+        <div className="flex flex-col md:flex-row justify-center gap-8 mb-12 my-3">
+          <div className="bg-white bg-opacity-80 rounded-xl shadow-md p-8 flex-1 text-center">
+            <div className=" text-[#061d61] w-8 h-8 mb-4 mx-auto">
+              <Locate className="w-8 h-8" />
+            </div>
+            <h3 className="text-xl font-bold text-[#061d61] mb-2">
+              Our Address
+            </h3>
+            <p className="text-lg text-[#061d61]">
+              <strong>Graha BS</strong>
+              <br />
+              Jl. Kemang Utara A No.3, Lantai 3
             </p>
           </div>
-          <div>
-            <h4 className="font-semibold">Phone:</h4>
-            <a
-              href="tel:+6282280853270"
-              className="text-muted-foreground hover:underline"
-            >
-              +62 822 8085 3270
-            </a>
+          <div className="bg-white bg-opacity-80 rounded-xl shadow-md p-8 flex-1 text-center">
+            <div className=" text-[#061d61] w-8 h-8 mb-4 mx-auto">
+              <Phone className="w-8 h-8" />
+            </div>
+            <h3 className="text-xl font-bold text-[#061d61] mb-2">
+              Our Contact Info
+            </h3>
+            <p className="text-lg text-neutral-700">
+              <a
+                href="https://wa.me/6282280853270"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#061d61] hover:underline hover:text-blue-800"
+              >
+                +62 822 8085 3270
+              </a>
+              <br />
+              <a
+                href="mailto:management@lextera.id"
+                className="text-[#061d61] hover:underline hover:text-blue-800"
+              >
+                management@lextera.id
+              </a>
+            </p>
           </div>
-          <div>
-            <h4 className="font-semibold">Email:</h4>
-            <a
-              href="mailto:info@lit.co.id"
-              className="text-muted-foreground hover:underline"
+        </div>
+
+        <div className="rounded-xl overflow-hidden shadow-md mb-8">
+          {isLoaded ? (
+            <GoogleMap
+              mapContainerStyle={containerStyle}
+              center={center}
+              zoom={17}
+              onLoad={onLoad}
+              onUnmount={onUnmount}
             >
-              info@lit.co.id
-            </a>
-          </div>
-          <div>
-            <h4 className="font-semibold">Website:</h4>
-            <a
-              href="http://www.lit.co.id"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:underline"
-            >
-              www.lit.co.id
-            </a>
-          </div>
-        </CardContent>
-      </Card>
+              <Marker position={center} />
+            </GoogleMap>
+          ) : (
+            <div>Loading Map...</div>
+          )}
+        </div>
+
+        <div className="text-center mt-6">
+          <a
+            href={`https://www.google.com/maps/dir/?api=1&destination=${center.lat},${center.lng}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-[#061d61] text-white px-6 py-3 rounded-lg text-lg font-semibold shadow-md hover:bg-[#061d61] transition-colors"
+          >
+            Get Directions
+          </a>
+        </div>
+      </div>
     </section>
   );
 };
 
-export default Contact;
+export default ContactUs;

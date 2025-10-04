@@ -1,22 +1,27 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Merriweather, Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import Image from "next/image";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+// Setup Merriweather for body/serif text
+const merriweather = Merriweather({
   subsets: ["latin"],
+  weight: ["400", "700"], // It's good practice to specify weights
+  variable: "--font-merriweather",
 });
 
 export const metadata: Metadata = {
-  title: "LEXTERA Innovative Technologies (LIT) - Enterprise IT Solutions",
-  description: "LEXTERA (LIT) is a leader in Indonesian telecommunications and IT solutions. We provide robust, scalable, and secure enterprise-grade services, from cloud adoption to digital transformation.",
+  title:
+    "LEXTERA Innovative Technology (LIT) - Enterprise IT and Telecom Solutions",
+  description:
+    "LEXTERA (LIT) is a leader in Indonesian telecommunications and IT solutions. We provide robust, scalable, and secure enterprise-grade services, from cloud adoption to digital transformation.",
 };
 
 export default function RootLayout({
@@ -25,12 +30,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${montserrat.variable} ${merriweather.variable} antialiased bg-gray-100`}
       >
         <div className="relative flex min-h-screen flex-col">
           <Header />
+
           <main className="flex-1">{children}</main>
           <Footer />
         </div>

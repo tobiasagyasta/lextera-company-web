@@ -1,39 +1,48 @@
+// components/ImageSection.js
+
+import React from "react";
 import Image from "next/image";
 
 const AboutUs = () => {
   return (
-    <section id="about" className="container py-24 px-5 sm:py-32">
-      <div className="bg-muted/50 border rounded-lg py-12">
-        <div className="px-6 flex flex-col-reverse md:flex-row gap-8 md:gap-12">
-          <div className="bg-green-300 w-full md:w-1/2">
-            <div className="w-full h-full bg-muted rounded-lg">
-              <Image
-                src="/nasa.jpg"
-                width={500}
-                height={500}
-                alt="Connectivity visual"
-              />
-            </div>
+    <div
+      id="about"
+      className=" bg-gray-100 bg-opacity-10 p-8 md:p-16 rounded-xl text-[#061d61] flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-24 m-4 md:m-8"
+    >
+      {/* Left-hand text section */}
+      <div className="lg:w-1/2">
+        <h2 className="text-3xl md:text-5xl font-bold mb-4">About Us</h2>
+        <div className="text-xl md:text-2xl leading-relaxed mb-2">
+          <span className="font-bold text-[#041e6f]">
+            Lextera Innovative Technology (LIT)
+          </span>{" "}
+          unites two decades of telecom infrastructure expertise with advanced
+          enterprise IT solutions.
+          <div className="mt-2">
+            As the evolution of PT LEXCORP INDONESIA, we deliver robust
+            platforms and large-scale deployments for Indonesia’s leading
+            corporations.
           </div>
-          <div className="flex flex-col justify-between">
-            <div className="pb-6">
-              <h2 className="text-3xl md:text-4xl font-bold">
-                <span className="bg-gradient-to-r from-[#1845cb]  to-[#e4e3e4] text-transparent bg-clip-text">
-                  About Us
-                </span>
-              </h2>
-              <p className="text-xl text-muted-foreground mt-4">
-                LIT represents the strategic evolution of LEXCORP, a leader in
-                Indonesian telecom infrastructure for two decades. We leverage
-                this legacy to provide enterprise-grade IT solutions, bridging
-                traditional infrastructure with cutting-edge innovations to
-                empower businesses in a digital world.
-              </p>
-            </div>
+          <div className="mt-2">
+            We bridge infrastructure and application layers, making us your
+            strategic partner for digital transformation.
           </div>
         </div>
       </div>
-    </section>
+
+      {/* Right-hand image container */}
+      <div className="lg:w-1/2 w-full">
+        <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+          <Image
+            src="/tony-stoddard-DgZxBnZeQo8-unsplash.jpg"
+            alt="A descriptive alt text for your image"
+            layout="fill"
+            objectFit="cover"
+            className="rounded-lg"
+          />
+        </div>
+      </div>
+    </div>
   );
 };
 

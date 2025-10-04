@@ -18,6 +18,12 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        // This sets up 'font-sans' to use your --font-montserrat variable
+        sans: ["var(--font-montserrat)"],
+        // This creates a new 'font-merriweather' utility class
+        merriweather: ["var(--font-merriweather)"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
