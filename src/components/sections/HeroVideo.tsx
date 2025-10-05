@@ -4,7 +4,10 @@ import LogoCarousel from "./LogoCarousel";
 const HeroVideo = () => {
   return (
     <>
-      <div className="relative w-full h-[70vh] md:h-[120vh] overflow-hidden">
+      <div
+        className="relative w-full h-[70vh] md:h-[120vh] overflow-hidden"
+        id="headervid"
+      >
         <video
           className="absolute top-0 left-0 w-full h-full object-cover"
           src="https://og1kqh0muyfm8xji.public.blob.vercel-storage.com/jakarta-skyline-small.mp4"

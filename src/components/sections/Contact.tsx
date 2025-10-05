@@ -3,6 +3,7 @@
 import React from "react";
 import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 import { Locate, Phone } from "lucide-react";
+import FloatingIcon from "../ui/floating";
 import Link from "next/link";
 
 const containerStyle = {
@@ -48,20 +49,38 @@ const ContactUs = () => {
         <div className="flex flex-col md:flex-row justify-center gap-8 mb-12 my-3">
           <div className="bg-white bg-opacity-80 rounded-xl shadow-md p-8 flex-1 text-center">
             <div className=" text-[#061d61] w-8 h-8 mb-4 mx-auto">
-              <Locate className="w-8 h-8" />
+              <FloatingIcon icon={Locate} size={40} />
             </div>
             <h3 className="text-xl font-bold text-[#061d61] mb-2">
               Our Address
             </h3>
-            <p className="text-lg text-[#061d61]">
+            <p className="text-lg text-[#061d61] mb-1">
               <strong>Graha BS</strong>
-              <br />
+            </p>
+            <p className="text-lg text-[#061d61] mb-1">
+              {" "}
               Jl. Kemang Utara A No.3, Lantai 3
             </p>
+            <p className="text-lg text-[#061d61] mb-1">
+              Bangka, Kec. Mampang Prpt., Kota Jakarta Selatan
+            </p>
+            <p className="text-lg text-[#061d61] mb-1">
+              Jakarta, Indonesia 12730
+            </p>
+            <div className="text-center mt-6">
+              <a
+                href={`https://www.google.com/maps/dir/?api=1&destination=${center.lat},${center.lng}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#061d61] text-white px-6 py-3 rounded-lg text-lg font-semibold shadow-md hover:bg-gray-100 hover:underline hover:underline-offset-2 hover:text-[#061d61] transition-colors"
+              >
+                Get Directions
+              </a>
+            </div>
           </div>
           <div className="bg-white bg-opacity-80 rounded-xl shadow-md p-8 flex-1 text-center">
             <div className=" text-[#061d61] w-8 h-8 mb-4 mx-auto">
-              <Phone className="w-8 h-8" />
+              <FloatingIcon icon={Phone} size={36} />
             </div>
             <h3 className="text-xl font-bold text-[#061d61] mb-2">
               Our Contact Info
@@ -71,16 +90,18 @@ const ContactUs = () => {
                 href="https://wa.me/6282280853270"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#061d61] hover:underline hover:text-blue-800"
+                className="text-[#061d61]  hover:text-blue-800"
               >
-                +62 822 8085 3270
+                <strong>Phone :</strong>{" "}
+                <span className="underline">+62 822 8085 3270</span>{" "}
               </a>
               <br />
               <a
                 href="mailto:management@lextera.id"
-                className="text-[#061d61] hover:underline hover:text-blue-800"
+                className="text-[#061d61]  hover:text-blue-800"
               >
-                management@lextera.id
+                <strong>Email :</strong>{" "}
+                <span className="underline"> management@lextera.id</span>
               </a>
             </p>
           </div>
@@ -100,17 +121,6 @@ const ContactUs = () => {
           ) : (
             <div>Loading Map...</div>
           )}
-        </div>
-
-        <div className="text-center mt-6">
-          <a
-            href={`https://www.google.com/maps/dir/?api=1&destination=${center.lat},${center.lng}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-[#061d61] text-white px-6 py-3 rounded-lg text-lg font-semibold shadow-md hover:bg-[#061d61] transition-colors"
-          >
-            Get Directions
-          </a>
         </div>
       </div>
     </section>

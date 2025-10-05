@@ -49,7 +49,7 @@ const Header = () => {
         }`}
       >
         {/* Logo - now always on the left */}
-        <Link href="/">
+        <Link href="#headervid">
           <Image
             src={isSticky ? "/lextera.png" : "/lextera-white.png"}
             alt="Lextera Logo"
