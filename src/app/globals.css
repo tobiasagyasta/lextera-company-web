@@ -3,6 +3,13 @@
 
 @custom-variant dark (&:is(.dark *));
 
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 110px; /* Adjust this value */
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

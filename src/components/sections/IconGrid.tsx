@@ -122,7 +122,7 @@ const IconGrid = () => {
   // components/IconGrid.js
 
   return (
-    <div className="p-4 md:p-8 m-4">
+    <div className="p-4 md:p-8 m-4" id="services">
       <div className="grid grid-cols-1 md:grid-cols-2">
         {sections.map((section, index) => (
           <div

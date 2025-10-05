@@ -34,7 +34,10 @@ const ContactUs = () => {
   }, []);
 
   return (
-    <section className="bg-gray-100 bg-opacity-10 p-8 md:p-16 rounded-xl m-4 md:m-8">
+    <section
+      className="bg-gray-100 bg-opacity-10 p-8 md:p-16 rounded-xl m-4 md:m-8"
+      id="contact"
+    >
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-5xl font-bold text-[#061d61] mb-2">

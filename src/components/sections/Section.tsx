@@ -22,7 +22,7 @@ const Section = ({ children }: { children: ReactNode }) => {
       initial="hidden"
       animate={controls}
       variants={{
-        hidden: { opacity: 0, y: 40 },
+        hidden: { opacity: 0, y: 80 },
         visible: {
           opacity: 1,
           y: 0,

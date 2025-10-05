@@ -33,10 +33,10 @@ const Header = () => {
   }, [isMenuOpen]);
 
   const navLinks = [
-    { href: "/about", label: "About" },
-    { href: "/history", label: "History" },
-    { href: "/services", label: "Services" },
-    { href: "/contact", label: "Contact Us" },
+    { href: "#about", label: "About" },
+    { href: "#services", label: "Services" },
+    { href: "#history", label: "History" },
+    { href: "#contact", label: "Contact Us" },
   ];
 
   return (
